@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Container, Card } from 'react-bootstrap';
 import { useNavigate, Link } from 'react-router-dom';
 import './SignUp.css';
 import userService from '../../utils/userService';
+import { isDemoMode } from '../../utils/apiWrapper';
 
 export default function SignUp(props){
 
@@ -44,46 +45,81 @@ export default function SignUp(props){
     }
 
     return(
-        <>
-            <h1 className="sign-up-title">Sign Up</h1>
-            <Form className="sign-up-form" onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control 
-                    type="email" 
-                    name="email"
-                    placeholder="Enter email" 
-                    onChange={handleChange}
-                    value={signup.email}
-                    />
-                    <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                    </Form.Text>
-                </Form.Group>
+        <Container className="py-5">
+            <div className="row justify-content-center">
+                <div className="col-md-6">
+                    <Card className="shadow-sm">
+                        <Card.Body className="p-5">
+                            <h1 className="text-center mb-4 fw-bold">Create Account</h1>
+                            
+                            {isDemoMode() && (
+                                <div style={{
+                                    backgroundColor: '#e3f2fd',
+                                    border: '1px solid #2196f3',
+                                    borderRadius: '4px',
+                                    padding: '12px',
+                                    margin: '20px 0',
+                                    fontSize: '14px',
+                                    textAlign: 'center'
+                                }}>
+                                    <strong>📝 Demo Mode:</strong> Use any email/password to create a demo account!
+                                    <br />
+                                    <em>No real account will be created</em>
+                                </div>
+                            )}
+                            
+                            <Form onSubmit={handleSubmit}>
+                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                    <Form.Label>Email Address *</Form.Label>
+                                    <Form.Control 
+                                        type="email" 
+                                        name="email"
+                                        placeholder="Enter your email address" 
+                                        onChange={handleChange}
+                                        value={signup.email}
+                                        required
+                                    />
+                                    <Form.Text className="text-muted">
+                                        We'll never share your email with anyone else.
+                                    </Form.Text>
+                                </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control 
-                    type="password" 
-                    name="password"
-                    placeholder="Password" 
-                    onChange={handleChange}
-                    value={signup.password}
-                    />
-                </Form.Group>
-                <Form.Group controlId="formFile" className="mb-3">
-                    <Form.Label>Default file input example</Form.Label>
-                    <Form.Control 
-                    type="file" 
-                    name="photo"
-                    onChange={handleFileInput}
-                    />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
-                <p>Already have an account? Click <Link to='/login'>Here</Link></p>
-            </Form>
-        </>
+                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                    <Form.Label>Password *</Form.Label>
+                                    <Form.Control 
+                                        type="password" 
+                                        name="password"
+                                        placeholder="Create a secure password" 
+                                        onChange={handleChange}
+                                        value={signup.password}
+                                        required
+                                    />
+                                </Form.Group>
+                                
+                                {!isDemoMode() && (
+                                    <Form.Group controlId="formFile" className="mb-4">
+                                        <Form.Label>Profile Photo (Optional)</Form.Label>
+                                        <Form.Control 
+                                            type="file" 
+                                            name="photo"
+                                            onChange={handleFileInput}
+                                            accept="image/*"
+                                        />
+                                    </Form.Group>
+                                )}
+                                
+                                <Button variant="primary" type="submit" className="w-100 mb-3" size="lg">
+                                    Create Account
+                                </Button>
+                                
+                                <div className="text-center">
+                                    <p className="mb-0">Already have an account? <Link to='/login'>Sign in here</Link></p>
+                                </div>
+                            </Form>
+                        </Card.Body>
+                    </Card>
+                </div>
+            </div>
+        </Container>
     )
 }

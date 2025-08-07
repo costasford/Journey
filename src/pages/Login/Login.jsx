@@ -1,4 +1,4 @@
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Container, Card } from 'react-bootstrap';
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import './Login.css';
@@ -32,56 +32,68 @@ export default function Login(props){
     }
 
     return(
-        <>
-            <h1 className="login-title">Login</h1>
-            {isDemoMode() && (
-                <div style={{
-                    backgroundColor: '#e3f2fd',
-                    border: '1px solid #2196f3',
-                    borderRadius: '4px',
-                    padding: '12px',
-                    margin: '20px auto',
-                    maxWidth: '400px',
-                    fontSize: '14px',
-                    textAlign: 'center'
-                }}>
-                    <strong>📊 Demo Mode:</strong> Use any email/password to try the demo!
-                    <br />
-                    <em>Example: demo@test.com / password123</em>
-                </div>
-            )}
-            <Form className="login-form" onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control 
-                        type="email" 
-                        placeholder="Enter email"
-                        name="email"
-                        value={login.email}
-                        onChange={handleChange}
-                        required 
-                        />
-                    <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                    </Form.Text>
-                </Form.Group>
+        <Container className="py-5">
+            <div className="row justify-content-center">
+                <div className="col-md-6">
+                    <Card className="shadow-sm">
+                        <Card.Body className="p-5">
+                            <h1 className="text-center mb-4 fw-bold">Welcome Back</h1>
+                            
+                            {isDemoMode() && (
+                                <div style={{
+                                    backgroundColor: '#e3f2fd',
+                                    border: '1px solid #2196f3',
+                                    borderRadius: '4px',
+                                    padding: '12px',
+                                    margin: '20px 0',
+                                    fontSize: '14px',
+                                    textAlign: 'center'
+                                }}>
+                                    <strong>📊 Demo Mode:</strong> Use any email/password to try the demo!
+                                    <br />
+                                    <em>Example: demo@test.com / password123</em>
+                                </div>
+                            )}
+                            
+                            <Form onSubmit={handleSubmit}>
+                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                    <Form.Label>Email Address</Form.Label>
+                                    <Form.Control 
+                                        type="email" 
+                                        placeholder="Enter your email address"
+                                        name="email"
+                                        value={login.email}
+                                        onChange={handleChange}
+                                        required 
+                                        size="lg"
+                                    />
+                                </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control 
-                        type="password" 
-                        placeholder="Password" 
-                        name="password"
-                        value={login.password} 
-                        onChange={handleChange}
-                        required
-                        />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
-                <p>Don't have an account? Click <Link to='/signup'>Here</Link></p>
-            </Form>
-        </>
+                                <Form.Group className="mb-4" controlId="formBasicPassword">
+                                    <Form.Label>Password</Form.Label>
+                                    <Form.Control 
+                                        type="password" 
+                                        placeholder="Enter your password" 
+                                        name="password"
+                                        value={login.password} 
+                                        onChange={handleChange}
+                                        required
+                                        size="lg"
+                                    />
+                                </Form.Group>
+                                
+                                <Button variant="primary" type="submit" className="w-100 mb-3" size="lg">
+                                    Sign In
+                                </Button>
+                                
+                                <div className="text-center">
+                                    <p className="mb-0">Don't have an account? <Link to='/signup'>Create one here</Link></p>
+                                </div>
+                            </Form>
+                        </Card.Body>
+                    </Card>
+                </div>
+            </div>
+        </Container>
     )
 }
