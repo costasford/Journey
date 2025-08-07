@@ -14,16 +14,16 @@ export default function Footer (){
     <MDBFooter id="footer" className='text-center' color='white' bgColor='dark'>
     <MDBContainer className='p-4'>
       <section className='mb-4'>
-         <a className='btn btn-outline-light btn-floating m-1' href="mailto: maximo00antezana@gmail.com" role='button'>
+         <a className='btn btn-outline-light btn-floating m-1' href="mailto: costa@example.com" role='button'>
           <MDBIcon fab icon='google' />
         </a>
-        <a className='btn btn-outline-light btn-floating m-1' href='#!' role='button'>
+        <a className='btn btn-outline-light btn-floating m-1' href='https://instagram.com/costasford' target='_blank' rel='noopener noreferrer' role='button'>
           <MDBIcon fab icon='instagram' />
         </a>
-        <a className='btn btn-outline-light btn-floating m-1' href='https://www.linkedin.com/in/antezana-max/' role='button'>
+        <a className='btn btn-outline-light btn-floating m-1' href='https://www.linkedin.com/in/costasford/' target='_blank' rel='noopener noreferrer' role='button'>
           <MDBIcon fab icon='linkedin-in' />
         </a>
-        <a className='btn btn-outline-light btn-floating m-1' href='https://github.com/mantezana1998' role='button'>
+        <a className='btn btn-outline-light btn-floating m-1' href='https://github.com/costasford' target='_blank' rel='noopener noreferrer' role='button'>
           <MDBIcon fab icon='github' />
         </a>
       </section>
@@ -170,9 +170,9 @@ export default function Footer (){
     </MDBContainer>
 
     <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-      © 2022 Copyright: 
-      <a className='text-white' href='https://mdbootstrap.com/'>
-        Journey
+      © 2024 Copyright: 
+      <a className='text-white' href='https://costasford.github.io/Journey'>
+        Journey ABA Tracker
       </a>
     </div>
   </MDBFooter>
