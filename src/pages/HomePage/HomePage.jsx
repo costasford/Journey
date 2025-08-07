@@ -1,4 +1,5 @@
 import { Container, Row, Col, Button, Tabs, Tab } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 import './HomePage.css';
 
 export default function HomePage(){
@@ -10,7 +11,7 @@ export default function HomePage(){
                         <div id="header-intro">
                             <h3>Start the journey to happiness and wellness with outcome-based autism care.</h3>
                             <h6>Delivering data collection to help your loved one achieve their goals.</h6>
-                            <Button variant="primary" size="lg" href='/signup'>Get Started</Button>
+                            <Button variant="primary" size="lg" as={Link} to='/signup'>Get Started</Button>
                         </div>
                     </Col>
 

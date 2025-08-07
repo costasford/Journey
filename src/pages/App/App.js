@@ -93,7 +93,7 @@ export default function App() {
       <>
         <DemoNotice />
         <Routes>
-          <Route path="/" element={<Layout />} handleLogout={handleLogout} user={user}>
+          <Route path="/" element={<Layout handleLogout={handleLogout} user={user} />}>
             <Route index element={<HomePage />}/>
             <Route path='aboutus' element={<AboutUs />}/>
             <Route path="contactus" element={<ContactUs />}/>
@@ -116,7 +116,7 @@ export default function App() {
     <>
       <DemoNotice />
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Layout handleLogout={handleLogout} user={user} />}>
           <Route index element={<HomePage />}/>
           <Route path='aboutus' element={<AboutUs />}/>
           <Route path="contactus" element={<ContactUs />}/>

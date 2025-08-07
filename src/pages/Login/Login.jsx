@@ -1,8 +1,9 @@
 import { Form, Button } from 'react-bootstrap';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './Login.css';
 import userService from '../../utils/userService';
+import { isDemoMode } from '../../utils/apiWrapper';
 
 export default function Login(props){
 
@@ -33,6 +34,22 @@ export default function Login(props){
     return(
         <>
             <h1 className="login-title">Login</h1>
+            {isDemoMode() && (
+                <div style={{
+                    backgroundColor: '#e3f2fd',
+                    border: '1px solid #2196f3',
+                    borderRadius: '4px',
+                    padding: '12px',
+                    margin: '20px auto',
+                    maxWidth: '400px',
+                    fontSize: '14px',
+                    textAlign: 'center'
+                }}>
+                    <strong>📊 Demo Mode:</strong> Use any email/password to try the demo!
+                    <br />
+                    <em>Example: demo@test.com / password123</em>
+                </div>
+            )}
             <Form className="login-form" onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -63,7 +80,7 @@ export default function Login(props){
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
-                <p>Don't have an account? Click <a href='/signup'>Here</a></p>
+                <p>Don't have an account? Click <Link to='/signup'>Here</Link></p>
             </Form>
         </>
     )

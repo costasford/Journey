@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './SignUp.css';
 import userService from '../../utils/userService';
 
@@ -82,7 +82,7 @@ export default function SignUp(props){
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
-                <p>Already have an account? Click <a href='/login'>Here</a></p>
+                <p>Already have an account? Click <Link to='/login'>Here</Link></p>
             </Form>
         </>
     )

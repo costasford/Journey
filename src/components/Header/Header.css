@@ -18,6 +18,25 @@
 .navbar-items a, .navbar-right a{
     color: white;
     padding: 0 12px;
+    text-decoration: none;
+}
+
+.navbar-items a:hover, .navbar-right a:hover{
+    text-decoration: underline;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 0 12px;
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.nav-button:hover {
+    text-decoration: underline;
 }
 
 
