@@ -132,8 +132,6 @@
 ![Git](https://img.shields.io/badge/-Git-333?style=flat&logo=git)
 ![Github](https://img.shields.io/badge/-GitHub-333?style=flat&logo=github)
 ![VSCode](https://img.shields.io/badge/-VS_Code-333?style=flat&logo=visualstudio)
-![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-333?style=flat&logo=postgresql)
-![Materialize CSS](https://img.shields.io/badge/-Materialize_CSS-333?style=flat&logo=materialdesign) 
 
 <h2> :question: What data will parents be able to record? </h2>
 
