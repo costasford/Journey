@@ -1,4 +1,5 @@
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import costasFordPhoto from '../../assets/team/costas-ford.jpg';
 
 export default function AboutUs(){
     const teamMembers = [
@@ -23,7 +24,7 @@ export default function AboutUs(){
         {
             name: "Costas Ford",
             role: "Full Stack Developer",
-            image: "https://i.imgur.com/5SlMwqv.jpg",
+            image: costasFordPhoto,
             link: "https://github.com/costasford"
         }
     ];
