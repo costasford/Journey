@@ -1,4 +1,7 @@
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import maxAntezanaPhoto from '../../assets/team/max-antezana.png';
+import dianneLozanoPhoto from '../../assets/team/dianne-lozano.png';
+import stevenBalleriniPhoto from '../../assets/team/steven-ballerini.png';
 import costasFordPhoto from '../../assets/team/costas-ford.jpg';
 
 export default function AboutUs(){
@@ -6,19 +9,19 @@ export default function AboutUs(){
         {
             name: "Max Antezana",
             role: "Lead Developer & ABA Specialist",
-            image: "https://i.imgur.com/LNosXMw.png",
+            image: maxAntezanaPhoto,
             link: "https://mantezana1998.github.io/new-portfolio/"
         },
         {
             name: "DiAnne Lozano",
             role: "Frontend Developer",
-            image: "https://i.imgur.com/9aYehlv.png",
+            image: dianneLozanoPhoto,
             link: "https://github.com/ditabu"
         },
         {
             name: "Steven Ballerini",
             role: "Backend Developer",
-            image: "https://i.imgur.com/vTb8yMT.png",
+            image: stevenBalleriniPhoto,
             link: "https://github.com/StevenB94"
         },
         {

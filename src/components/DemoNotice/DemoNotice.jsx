@@ -13,7 +13,7 @@ const DemoNotice = () => {
         <span className="demo-notice-icon">📊</span>
         <span className="demo-notice-text">{demoNotice.message}</span>
         <a 
-          href="https://github.com/mantezana/Journey" 
+          href="https://github.com/costasford/Journey"
           target="_blank" 
           rel="noopener noreferrer"
           className="demo-notice-link"

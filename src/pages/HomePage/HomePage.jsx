@@ -1,5 +1,6 @@
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import { Link } from 'react-router-dom';
+import heroImage from '../../assets/hero-aba-session.jpg';
 import './HomePage.css';
 
 export default function HomePage(){
@@ -52,7 +53,7 @@ export default function HomePage(){
                         </Col>
                         <Col lg={6} className="text-center">
                             <img 
-                                src="https://i.imgur.com/JK1D7Lz.jpg" 
+                                src={heroImage}
                                 alt="Professional ABA therapy session" 
                                 className="img-fluid rounded shadow-lg hero-image"
                             />
